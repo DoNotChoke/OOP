@@ -5,4 +5,5 @@ int main(){
     cout.tie(nullptr);
     cin.tie(nullptr);
     cout<<"nghia\n";
+    cout << "hoang\n";
 }
