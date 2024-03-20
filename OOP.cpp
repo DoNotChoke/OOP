@@ -52,10 +52,4 @@ int main(){
     ios_base::sync_with_stdio(false);
     cout.tie(nullptr);
     cin.tie(nullptr);
-<<<<<<< HEAD
 }
-=======
-    cout<<"nghiaHUST\n";
-    cout << "Hoang-HUST\n";
-}
->>>>>>> 98b9658c85b2610e1f91655917dd14b0b0b19efc
