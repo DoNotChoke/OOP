@@ -67,9 +67,9 @@
     "description": "Experimental deviation (percent)",
     "value": 10
   },
-  "randomness": {
+  "randomess": {
     "description": "the option for establishing new randon configuration or load from the file",
-    "value": 1
+    "value": -1
   },
   "ageDistribution": {
     "description": "distribution of age in pedestrians",
