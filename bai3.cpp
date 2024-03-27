@@ -53,7 +53,7 @@ class Personal: public Pedestrian
 {
     
 };
-int main()
-{
+// int main()
+// {
 
-}
+// }

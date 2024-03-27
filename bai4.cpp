@@ -2,14 +2,8 @@
 #include <vector>
 #include <random>
 #include <string>
+#include "bai3.cpp"
 using namespace std;
-vector<int> result;
-class Ward
-{
-    double entranceX,entranceY,exitX,exitY;
-    double wallX1,wallX2,wallY1,wallY2;
-    string name;
-};
 vector<int> process(Ward human[],int triple,int single)
 {
     double limit=3*triple+single;
@@ -27,7 +21,6 @@ vector<int> process(Ward human[],int triple,int single)
             break;
         }
     }
-    // cout<<endl<<r<<endl;
     return result;
 }
 int main()
