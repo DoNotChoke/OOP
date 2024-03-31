@@ -65,8 +65,12 @@ class Pedestrian {
     Point tempPoints;
 };
 
-class Patient : public Pedestrian{};
+class Patient : public Pedestrian{ 
+    Walkability walkability;
+};
 
-class Visitor: public Pedestrian{};
+class Visitor: public Pedestrian{ 
+    Walkability walkability;
+};
 
 class Personel : public Pedestrian{};
