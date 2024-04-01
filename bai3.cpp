@@ -73,7 +73,3 @@ public:
 };
 
 class Personel : public Pedestrian{};
-
-int main () {
-
-}
