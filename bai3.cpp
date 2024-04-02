@@ -41,6 +41,9 @@ public:
     Point entrance;
     Point exit;
     Point A, B, C, D; //4 dinh
+    Ward(string name) {
+        this->name = name;
+    }
 };
 
 class AGVEvent : public Event {};
@@ -60,6 +63,7 @@ public:
     double age;
     AGVEvent impactOfAGV;
     Point tempPoints;
+
 };
 
 class Patient : public Pedestrian{ 
