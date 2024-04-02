@@ -12,7 +12,7 @@ int countVisitors(vector<Pedestrian>& pedestrians) { // dem Visitors
     return cnt;
 }
 
-void assignJourney(vector<Pedestrian> pedestrians, vector<Ward> wards) {
+void assignJourney(vector<Pedestrian>& pedestrians, vector<Ward>& wards) {
     int single = countVisitors(pedestrians);
     int triple = pedestrians.size() - single;
     auto genPairs = generatePairs(wards, triple, single);
