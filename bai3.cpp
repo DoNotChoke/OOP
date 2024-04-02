@@ -78,3 +78,26 @@ public:
 };
 
 class Personel : public Pedestrian{};
+
+//Generate event
+vector<Event> generateEvent(Pedestrian &pedestrian, vector<Event> &allEvents, vector<int> &allTimeDistances) {
+    vector<Event> events;
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dis(0, allEvents.size() - 1);
+
+    for(int i=0;i<20;++i) {
+        // tao index X ngau nhien
+        int X = dis(gen);
+        
+        // create new Event object based on allEvent[X]
+        Event newEvent = allEvents[X];
+        int timeDistance = allTimeDistances[X];
+
+        newEvent.time = timeDistance;
+        events.push_back(newEvent);
+    }
+    pedestrian.events = events;
+    return events;
+}
+
