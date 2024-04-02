@@ -35,3 +35,6 @@ vector<pair<Ward, int>> generatePairs(vector<Ward> wards, int triple, int single
 
     return pairs;
 }
+// int main () {
+
+// }

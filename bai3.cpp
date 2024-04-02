@@ -99,7 +99,6 @@ vector<Event> generateEvent(Pedestrian &pedestrian, vector<Event> &allEvents, ve
     pedestrian.events = events;
     return events;
 }
+// int main () {
 
-int main () {
-    
-}
+// }
