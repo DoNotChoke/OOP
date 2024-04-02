@@ -24,12 +24,17 @@ void assignJourney(vector<Pedestrian>& pedestrians, vector<Ward>& wards) {
         useAllCharacters = true;
         
         for(auto &pair: genPairs) {
-            for(char c : pair.first.name)
-                charCount[c]++; //dem so lan xuat hien
+            charCount[pair.first.name]++;
         }
 
         for(auto &pedestrian : pedestrians) {
+            if(charCount.empty()) {
+                break;
+            }
             if(auto visitor = dynamic_cast<Visitor*>(&pedestrian)) {
+                if(charCount.empty()) {
+                    break;
+                }
                 char c = max_element(charCount.begin(), charCount.end(), [](const auto &a, const auto &b){
                     return a.second < b.second;
                 })->first;
@@ -40,6 +45,9 @@ void assignJourney(vector<Pedestrian>& pedestrians, vector<Ward>& wards) {
                 }
             } else if (auto personnel = dynamic_cast<Personel*>(&pedestrian)) {
                 for (int i = 0; i < 3; ++i) {
+                    if(charCount.empty()) {
+                        break;
+                    }
                     char c = max_element(charCount.begin(), charCount.end(), [](const auto& a, const auto& b) { 
                         return a.second < b.second; 
                     })->first;
@@ -51,6 +59,9 @@ void assignJourney(vector<Pedestrian>& pedestrians, vector<Ward>& wards) {
                 }
             } else if (auto patient = dynamic_cast<Patient*>(&pedestrian)) {
                 for (int i = 0; i < 3; ++i) {
+                    if(charCount.empty()) {
+                        break;
+                    }
                     char c = max_element(charCount.begin(), charCount.end(), [](const auto& a, const auto& b) {
                         return a.second < b.second; 
                     })->first;

@@ -37,11 +37,11 @@ public:
 
 class Ward {
 public:
-    string name;
+    char name;
     Point entrance;
     Point exit;
     Point A, B, C, D; //4 dinh
-    Ward(string name) {
+    Ward(char name) {
         this->name = name;
     }
 };
