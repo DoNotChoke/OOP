@@ -5,9 +5,9 @@ using namespace std;
 int countVisitors(vector<Pedestrian>& pedestrians) { // dem Visitors
     int cnt = 0;
     for(const auto& pedestrian : pedestrians) {
-        if (dynamic_cast<const Visitor*>(&pedestrian)) {
-            cnt++;
-        }
+       if(dynamic_cast<const Visitor*>(&pedestrian)) {
+           cnt++;
+       }
     }
     return cnt;
 }
@@ -24,12 +24,12 @@ void assignJourney(vector<Pedestrian>& pedestrians, vector<Ward>& wards) {
         useAllCharacters = true;
         
         for(auto &pair: genPairs) {
-            for(char c : pair.first)
+            for(char c : pair.first.name)
                 charCount[c]++; //dem so lan xuat hien
         }
 
         for(auto &pedestrian : pedestrians) {
-            if(auto visitor = dynamic_cast<const &Visitor*>(&pedestrian)) {
+            if(auto visitor = dynamic_cast<Visitor*>(&pedestrian)) {
                 char c = max_element(charCount.begin(), charCount.end(), [](const auto &a, const auto &b){
                     return a.second < b.second;
                 })->first;
@@ -38,7 +38,7 @@ void assignJourney(vector<Pedestrian>& pedestrians, vector<Ward>& wards) {
                 if (charCount[c] == 0) {
                     charCount.erase(c);
                 }
-            } else if (auto personnel = dynamic_cast<Personnel*>(&pedestrian)) {
+            } else if (auto personnel = dynamic_cast<Personel*>(&pedestrian)) {
                 for (int i = 0; i < 3; ++i) {
                     char c = max_element(charCount.begin(), charCount.end(), [](const auto& a, const auto& b) { 
                         return a.second < b.second; 

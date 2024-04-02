@@ -64,6 +64,7 @@ public:
     AGVEvent impactOfAGV;
     Point tempPoints;
 
+    virtual ~Pedestrian() {}  // Virtual destructor
 };
 
 class Patient : public Pedestrian{ 
