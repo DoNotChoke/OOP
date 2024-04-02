@@ -30,7 +30,7 @@ void assignJourney(vector<Pedestrian>& pedestrians, vector<Ward>& wards) {
 
         for(auto &pedestrian : pedestrians) {
             if(auto visitor = dynamic_cast<const &Visitor*>(&pedestrian)) {
-                char c = max_element(charCount.beign(), charCount.end(), [](const auto &a, const auto &b){
+                char c = max_element(charCount.begin(), charCount.end(), [](const auto &a, const auto &b){
                     return a.second < b.second;
                 })->first;
                 visitor->journey.push_back(Ward(c));
